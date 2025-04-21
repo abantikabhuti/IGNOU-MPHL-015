@@ -54,3 +54,33 @@ int main() {
   printf("Factorial of %d is %d\n", n, factorial(n));
   return 0;
 }
+
+
+/* Example 1.3 Check if a number is a Prime */
+
+#include<stdio.h>
+#include<math.h>
+
+// Declaring a function to check if the number is a prime
+int checkprime(int n){
+  int i, flag = 1, z;
+  z = sqrt(n);
+  for (i = 2; i <= z; ++i) {
+    if (n % i == 0) {
+      flag = 0;
+      break;
+    }
+  }
+  return flag;
+}
+int main() {
+  int n, flag;
+  printf("Enter a positive integer: \n");
+  scanf("%d", &n);
+  flag = checkprime(n);
+  if (flag == 1)
+    printf("%d is a prime number.\n", n);
+  else
+    printf("%d is not a prime number.\n", n);
+  return 0;
+}
